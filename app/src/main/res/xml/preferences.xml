@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="自动记账设置"
+        android:icon="@drawable/ic_auto_tracking">
+
+        <SwitchPreferenceCompat
+            android:key="auto_tracking_enabled"
+            android:title="启用自动记账"
+            android:summary="通过通知和无障碍服务自动记录交易"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_auto_mode" />
+
+        <Preference
+            android:key="accessibility_service"
+            android:title="无障碍服务"
+            android:summary="未启用 - 点击设置"
+            android:icon="@drawable/ic_accessibility" />
+
+        <Preference
+            android:key="notification_access"
+            android:title="通知访问权限"
+            android:summary="未启用 - 点击设置"
+            android:icon="@drawable/ic_notifications" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="记账规则"
+        android:icon="@drawable/ic_rules">
+
+        <MultiSelectListPreference
+            android:key="supported_banks"
+            android:title="支持的银行"
+            android:summary="选择要监听的银行和支付平台"
+            android:entries="@array/bank_names"
+            android:entryValues="@array/bank_values"
+            android:icon="@drawable/ic_bank" />
+
+        <EditTextPreference
+            android:key="min_amount"
+            android:title="最小记录金额"
+            android:summary="低于此金额的交易将被忽略"
+            android:defaultValue="0.01"
+            android:inputType="numberDecimal"
+            android:icon="@drawable/ic_money" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_categorize"
+            android:title="智能分类"
+            android:summary="根据商户名称自动分类交易"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_category" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="界面设置"
+        android:icon="@drawable/ic_display">
+
+        <ListPreference
+            android:key="theme_mode"
+            android:title="主题模式"
+            android:summary="选择应用主题"
+            android:entries="@array/theme_names"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="system"
+            android:icon="@drawable/ic_theme" />
+
+        <SwitchPreferenceCompat
+            android:key="animations_enabled"
+            android:title="启用动画"
+            android:summary="显示界面切换动画"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_animation" />
+
+        <ListPreference
+            android:key="currency_format"
+            android:title="货币格式"
+            android:summary="选择货币显示格式"
+            android:entries="@array/currency_names"
+            android:entryValues="@array/currency_values"
+            android:defaultValue="cny"
+            android:icon="@drawable/ic_currency" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="数据管理"
+        android:icon="@drawable/ic_data">
+
+        <Preference
+            android:key="export_data"
+            android:title="导出数据"
+            android:summary="导出交易记录到文件"
+            android:icon="@drawable/ic_export" />
+
+        <Preference
+            android:key="import_data"
+            android:title="导入数据"
+            android:summary="从文件导入交易记录"
+            android:icon="@drawable/ic_import" />
+
+        <Preference
+            android:key="clear_data"
+            android:title="清除所有数据"
+            android:summary="删除所有交易记录和分类"
+            android:icon="@drawable/ic_delete" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="关于"
+        android:icon="@drawable/ic_info">
+
+        <Preference
+            android:key="app_version"
+            android:title="应用版本"
+            android:summary="1.0.0"
+            android:selectable="false"
+            android:icon="@drawable/ic_version" />
+
+        <Preference
+            android:key="privacy_policy"
+            android:title="隐私政策"
+            android:summary="查看隐私政策"
+            android:icon="@drawable/ic_privacy" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
