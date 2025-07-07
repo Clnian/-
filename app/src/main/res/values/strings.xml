@@ -38,4 +38,54 @@
     <string name="permission_sms_message">需要短信权限来实现自动记账功能</string>
     <string name="permission_granted">权限已授予</string>
     <string name="permission_denied">权限被拒绝</string>
+
+    <!-- 无障碍服务 -->
+    <string name="accessibility_service_description">自动记账无障碍服务\n\n此服务用于监听银行和支付应用的界面变化，自动识别交易信息并记录到账本中。\n\n我们不会收集您的个人信息，所有数据仅存储在本地设备上。</string>
+
+    <!-- 数组资源 -->
+    <string-array name="bank_names">
+        <item>支付宝</item>
+        <item>微信支付</item>
+        <item>工商银行</item>
+        <item>建设银行</item>
+        <item>农业银行</item>
+        <item>中国银行</item>
+        <item>招商银行</item>
+        <item>交通银行</item>
+    </string-array>
+
+    <string-array name="bank_values">
+        <item>alipay</item>
+        <item>wechat</item>
+        <item>icbc</item>
+        <item>ccb</item>
+        <item>abc</item>
+        <item>boc</item>
+        <item>cmb</item>
+        <item>bankcomm</item>
+    </string-array>
+
+    <string-array name="theme_names">
+        <item>跟随系统</item>
+        <item>浅色主题</item>
+        <item>深色主题</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="currency_names">
+        <item>人民币 (¥)</item>
+        <item>美元 ($)</item>
+        <item>欧元 (€)</item>
+    </string-array>
+
+    <string-array name="currency_values">
+        <item>cny</item>
+        <item>usd</item>
+        <item>eur</item>
+    </string-array>
 </resources>
