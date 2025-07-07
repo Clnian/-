@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -45,10 +47,16 @@ public class MainActivity extends AppCompatActivity implements TransactionAdapte
     private Spinner spinnerPeriod;
     private NumberFormat currencyFormat;
 
+    // 现代化权限请求
+    private ActivityResultLauncher<String[]> requestPermissionLauncher;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 初始化权限请求器
+        setupPermissionLauncher();
 
         initViews();
         setupToolbar();
@@ -192,30 +200,37 @@ public class MainActivity extends AppCompatActivity implements TransactionAdapte
         }
     }
 
+    private void setupPermissionLauncher() {
+        requestPermissionLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestMultiplePermissions(),
+                result -> {
+                    Boolean receiveSmsGranted = result.get(Manifest.permission.RECEIVE_SMS);
+                    Boolean readSmsGranted = result.get(Manifest.permission.READ_SMS);
+
+                    if (receiveSmsGranted != null && readSmsGranted != null &&
+                        receiveSmsGranted && readSmsGranted) {
+                        Toast.makeText(this, R.string.permission_granted, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+    }
+
     private void checkSmsPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS) 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
                 != PackageManager.PERMISSION_GRANTED ||
-            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) 
+            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
                 != PackageManager.PERMISSION_GRANTED) {
-            
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.RECEIVE_SMS, Manifest.permission.READ_SMS},
-                    REQUEST_SMS_PERMISSION);
+
+            requestPermissionLauncher.launch(new String[]{
+                    Manifest.permission.RECEIVE_SMS,
+                    Manifest.permission.READ_SMS
+            });
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, 
-                                         @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_SMS_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, R.string.permission_granted, Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+    // 移除过时的权限处理方法，使用现代化的ActivityResultLauncher
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
