@@ -19,4 +19,27 @@
     <color name="text_primary">#FF212121</color>
     <color name="text_secondary">#FF757575</color>
     <color name="divider_color">#FFE0E0E0</color>
+
+    <!-- 新增现代化颜色 -->
+    <color name="primary_color_light">#E3F2FD</color>
+    <color name="accent_color_light">#FFF3E0</color>
+    <color name="surface_color">#FFFFFF</color>
+    <color name="error_color">#F44336</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="success_color">#4CAF50</color>
+    <color name="info_color">#2196F3</color>
+
+    <!-- Shimmer颜色 -->
+    <color name="shimmer_placeholder">#E0E0E0</color>
+    <color name="shimmer_highlight">#F5F5F5</color>
+
+    <!-- 渐变颜色 -->
+    <color name="gradient_start">#667eea</color>
+    <color name="gradient_end">#764ba2</color>
+
+    <!-- 卡片阴影 -->
+    <color name="card_shadow">#1A000000</color>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
 </resources>

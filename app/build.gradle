@@ -73,6 +73,34 @@ dependencies {
     // Material Components (latest)
     implementation 'com.google.android.material:material:1.11.0'
 
+    // ViewPager2 for modern paging
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    // Shimmer effect for loading
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // SwipeRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // Navigation Component
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+    implementation 'androidx.navigation:navigation-ui:2.7.6'
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Material Dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+
+    // Flexible Adapter for RecyclerView
+    implementation 'eu.davidea:flexible-adapter:5.1.0'
+
+    // DotsIndicator for ViewPager
+    implementation 'com.tbuonomo:dotsindicator:5.0'
+
     // Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

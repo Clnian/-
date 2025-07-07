@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Shimmer Item 1 -->
+    <include layout="@layout/shimmer_transaction_item" />
+
+    <!-- Shimmer Item 2 -->
+    <include layout="@layout/shimmer_transaction_item" />
+
+    <!-- Shimmer Item 3 -->
+    <include layout="@layout/shimmer_transaction_item" />
+
+    <!-- Shimmer Item 4 -->
+    <include layout="@layout/shimmer_transaction_item" />
+
+    <!-- Shimmer Item 5 -->
+    <include layout="@layout/shimmer_transaction_item" />
+
+</LinearLayout>
