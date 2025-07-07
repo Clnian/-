@@ -222,11 +222,11 @@
 
                     <Button
                         android:id="@+id/btn_select_date"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="选择日期"
-                        android:textAlignment="textStart" />
+                        android:gravity="start|center_vertical" />
 
                 </LinearLayout>
 

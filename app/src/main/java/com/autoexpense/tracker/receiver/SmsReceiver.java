@@ -29,7 +29,14 @@ public class SmsReceiver extends BroadcastReceiver {
                 Object[] pdus = (Object[]) bundle.get("pdus");
                 if (pdus != null) {
                     for (Object pdu : pdus) {
-                        SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) pdu);
+                        // 获取短信格式 (Android 6.0+需要指定格式)
+                        String format = bundle.getString("format");
+                        SmsMessage smsMessage;
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                            smsMessage = SmsMessage.createFromPdu((byte[]) pdu, format);
+                        } else {
+                            smsMessage = SmsMessage.createFromPdu((byte[]) pdu);
+                        }
                         String sender = smsMessage.getDisplayOriginatingAddress();
                         String messageBody = smsMessage.getMessageBody();
                         

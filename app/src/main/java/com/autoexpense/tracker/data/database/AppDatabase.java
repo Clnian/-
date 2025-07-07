@@ -62,7 +62,8 @@ public abstract class AppDatabase extends RoomDatabase {
         private void initializeDefaultCategories() {
             // 在后台线程中初始化默认分类
             new Thread(() -> {
-                CategoryDao categoryDao = INSTANCE.categoryDao();
+                if (INSTANCE != null) {
+                    CategoryDao categoryDao = INSTANCE.categoryDao();
                 
                 // 支出分类
                 categoryDao.insert(new Category("餐饮", Transaction.TransactionType.EXPENSE, "food", "#FF5722", true));
@@ -73,11 +74,12 @@ public abstract class AppDatabase extends RoomDatabase {
                 categoryDao.insert(new Category("教育", Transaction.TransactionType.EXPENSE, "education", "#3F51B5", true));
                 categoryDao.insert(new Category("其他", Transaction.TransactionType.EXPENSE, "other", "#607D8B", true));
                 
-                // 收入分类
-                categoryDao.insert(new Category("工资", Transaction.TransactionType.INCOME, "salary", "#4CAF50", true));
-                categoryDao.insert(new Category("奖金", Transaction.TransactionType.INCOME, "bonus", "#8BC34A", true));
-                categoryDao.insert(new Category("投资", Transaction.TransactionType.INCOME, "investment", "#CDDC39", true));
-                categoryDao.insert(new Category("其他", Transaction.TransactionType.INCOME, "other", "#FFC107", true));
+                    // 收入分类
+                    categoryDao.insert(new Category("工资", Transaction.TransactionType.INCOME, "salary", "#4CAF50", true));
+                    categoryDao.insert(new Category("奖金", Transaction.TransactionType.INCOME, "bonus", "#8BC34A", true));
+                    categoryDao.insert(new Category("投资", Transaction.TransactionType.INCOME, "investment", "#CDDC39", true));
+                    categoryDao.insert(new Category("其他", Transaction.TransactionType.INCOME, "other", "#FFC107", true));
+                }
             }).start();
         }
     }
