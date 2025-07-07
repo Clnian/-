@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 银行和支付平台 -->
+    <string-array name="bank_names">
+        <item>支付宝</item>
+        <item>微信支付</item>
+        <item>中国工商银行</item>
+        <item>中国建设银行</item>
+        <item>中国农业银行</item>
+        <item>中国银行</item>
+        <item>招商银行</item>
+        <item>交通银行</item>
+        <item>中信银行</item>
+        <item>光大银行</item>
+        <item>华夏银行</item>
+        <item>民生银行</item>
+        <item>广发银行</item>
+        <item>平安银行</item>
+        <item>浦发银行</item>
+        <item>兴业银行</item>
+    </string-array>
+    
+    <string-array name="bank_values">
+        <item>alipay</item>
+        <item>wechat</item>
+        <item>icbc</item>
+        <item>ccb</item>
+        <item>abc</item>
+        <item>boc</item>
+        <item>cmb</item>
+        <item>bankcomm</item>
+        <item>citic</item>
+        <item>ceb</item>
+        <item>hxb</item>
+        <item>cmbc</item>
+        <item>cgb</item>
+        <item>pingan</item>
+        <item>spdb</item>
+        <item>cib</item>
+    </string-array>
+    
+    <!-- 主题模式 -->
+    <string-array name="theme_names">
+        <item>跟随系统</item>
+        <item>浅色模式</item>
+        <item>深色模式</item>
+    </string-array>
+    
+    <string-array name="theme_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+    
+    <!-- 货币格式 -->
+    <string-array name="currency_names">
+        <item>人民币 (¥)</item>
+        <item>美元 ($)</item>
+        <item>欧元 (€)</item>
+        <item>英镑 (£)</item>
+        <item>日元 (¥)</item>
+    </string-array>
+    
+    <string-array name="currency_values">
+        <item>cny</item>
+        <item>usd</item>
+        <item>eur</item>
+        <item>gbp</item>
+        <item>jpy</item>
+    </string-array>
+    
+    <!-- 时间段选项 -->
+    <string-array name="period_names">
+        <item>本周</item>
+        <item>本月</item>
+        <item>本年</item>
+        <item>全部</item>
+    </string-array>
+    
+    <string-array name="period_values">
+        <item>week</item>
+        <item>month</item>
+        <item>year</item>
+        <item>all</item>
+    </string-array>
+    
+    <!-- 分类选项 -->
+    <string-array name="category_names">
+        <item>餐饮</item>
+        <item>交通</item>
+        <item>购物</item>
+        <item>娱乐</item>
+        <item>医疗</item>
+        <item>教育</item>
+        <item>住房</item>
+        <item>通讯</item>
+        <item>其他</item>
+    </string-array>
+    
+    <string-array name="category_values">
+        <item>food</item>
+        <item>transport</item>
+        <item>shopping</item>
+        <item>entertainment</item>
+        <item>medical</item>
+        <item>education</item>
+        <item>housing</item>
+        <item>communication</item>
+        <item>other</item>
+    </string-array>
+    
+</resources>

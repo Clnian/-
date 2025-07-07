@@ -17,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.autoexpense.tracker.R;
+import com.autoexpense.tracker.data.entity.Transaction;
 import com.autoexpense.tracker.ui.AddTransactionActivity;
 import com.autoexpense.tracker.ui.adapter.QuickStatsAdapter;
 import com.autoexpense.tracker.ui.adapter.RecentTransactionsAdapter;
@@ -109,9 +110,23 @@ public class DashboardFragment extends Fragment {
     
     private void setupRecentTransactions() {
         transactionsAdapter = new RecentTransactionsAdapter(requireContext());
+        transactionsAdapter.setOnTransactionClickListener(new RecentTransactionsAdapter.OnTransactionClickListener() {
+            @Override
+            public void onTransactionClick(Transaction transaction) {
+                // TODO: 打开交易详情
+                android.widget.Toast.makeText(requireContext(), "点击了交易: " + transaction.getCategory(), android.widget.Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onTransactionLongClick(Transaction transaction) {
+                // TODO: 显示操作菜单
+                android.widget.Toast.makeText(requireContext(), "长按了交易: " + transaction.getCategory(), android.widget.Toast.LENGTH_SHORT).show();
+            }
+        });
+
         recentTransactionsRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recentTransactionsRecyclerView.setAdapter(transactionsAdapter);
-        
+
         // Add item decoration for spacing
         recentTransactionsRecyclerView.addItemDecoration(
                 new androidx.recyclerview.widget.DividerItemDecoration(
