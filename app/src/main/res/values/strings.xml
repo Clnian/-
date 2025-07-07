@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">自动记账</string>
+    <string name="add_transaction">添加记录</string>
+    <string name="amount">金额</string>
+    <string name="category">分类</string>
+    <string name="description">备注</string>
+    <string name="date">日期</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="income">收入</string>
+    <string name="expense">支出</string>
+    <string name="total_income">总收入</string>
+    <string name="total_expense">总支出</string>
+    <string name="balance">余额</string>
+    <string name="no_transactions">暂无记录</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    
+    <!-- 分类 -->
+    <string name="category_food">餐饮</string>
+    <string name="category_transport">交通</string>
+    <string name="category_shopping">购物</string>
+    <string name="category_entertainment">娱乐</string>
+    <string name="category_medical">医疗</string>
+    <string name="category_education">教育</string>
+    <string name="category_salary">工资</string>
+    <string name="category_bonus">奖金</string>
+    <string name="category_investment">投资</string>
+    <string name="category_other">其他</string>
+    
+    <!-- 错误信息 -->
+    <string name="error_amount_required">请输入金额</string>
+    <string name="error_category_required">请选择分类</string>
+    <string name="error_invalid_amount">请输入有效金额</string>
+    
+    <!-- 权限相关 -->
+    <string name="permission_sms_title">短信权限</string>
+    <string name="permission_sms_message">需要短信权限来实现自动记账功能</string>
+    <string name="permission_granted">权限已授予</string>
+    <string name="permission_denied">权限被拒绝</string>
+</resources>
